@@ -4,7 +4,7 @@
 
 
 Game::Game()
-	:main_window({ setting::WINDOW_WIDTH, setting::WINDOW_HEIGHT }, "Platformer")
+	:main_window({ setting::WINDOW_WIDTH, setting::WINDOW_HEIGHT }, "Pqwe")
 {
 
 
@@ -54,8 +54,18 @@ void Game::draw(const sf::Shape& shape)
 
 void Game::tick(float dt)
 {
-
-
+	
+	if (player.collision(player.palyerCord, level.mapCord) == true) 
+	{
+		player.tick();
+	}
+	else
+	{
+		
+	}
+	
+	
+	
 
 }
 
@@ -63,6 +73,7 @@ void Game::render()
 {
 
 	level.render();
+	player.render();
 
 }
 

@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "level.hpp"
-
+#include "player.hpp"
 
 class Game
 {
@@ -32,5 +32,7 @@ private:
 	// Initialization class
 private:
 	sf::RenderWindow main_window;
+
 	Level level;
+	Player player;
 };

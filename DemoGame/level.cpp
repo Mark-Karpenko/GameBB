@@ -13,10 +13,10 @@ Level::Level()
 
 void Level::render()
 {
-    sf::RectangleShape Block;
+    sf::RectangleShape block;
 
-    Block.setSize(sf::Vector2f(setting::BLOCK_HEIGHT, setting::BLOCK_WIDTH));
-    Block.setFillColor(setting::BLOCK_COLOR);
+    block.setSize(sf::Vector2f(setting::BLOCK_HEIGHT, setting::BLOCK_WIDTH));
+    block.setFillColor(setting::BLOCK_COLOR);
 
     for (int i = 0; i < levelMap.size(); ++i)
     {
@@ -25,9 +25,11 @@ void Level::render()
             if (levelMap[i][j] == '1')
             {
 
-               Block.setPosition(sf::Vector2f(0 + j * setting::BLOCK_HEIGHT, 0 + i * setting::BLOCK_WIDTH));
-               Game::getInstance().draw(Block);
+               block.setPosition(sf::Vector2f(0 + j * setting::BLOCK_HEIGHT, 0 + i * setting::BLOCK_WIDTH));
 
+               mapCord.push_back(block.getGlobalBounds());
+
+               Game::getInstance().draw(block);
             }
 
         }
