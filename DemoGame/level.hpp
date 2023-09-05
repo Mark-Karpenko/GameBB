@@ -7,13 +7,12 @@ class Level
 
 public:
 
-	
 	std::vector<sf::FloatRect> mapCord;
 
 	Level();
 	void render();
 
-private:
+//private:
 
 
 	std::vector<std::vector<char>> levelMap =

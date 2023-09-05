@@ -6,23 +6,23 @@ class Player
 {
 public:
 
-	sf::FloatRect palyerCord;
-
 	Player();
 
-	void fall();
-	void render();
-	void tick();
+	sf::FloatRect palyerCord;
 
-	bool collision(sf::FloatRect playrCord, std::vector<sf::FloatRect> itemCord);
-	void move();
+	void render();
+
+	void tick(float dt);
+	void gravity(float dt);
+
+	int speed;
+	bool onGround = false;
+
 
 private:
 
-	int posX;
-	int posY;
-
-
+	float posX;
+	float posY;
 
 };
 

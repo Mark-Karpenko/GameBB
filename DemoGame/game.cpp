@@ -1,10 +1,15 @@
 
+#include <SFML/Graphics.hpp>
+
+#include "collisionManager.hpp"
+#include "level.hpp"
+#include "player.hpp"
 #include "setting.hpp"
 #include "game.hpp"
 
 
 Game::Game()
-	:main_window({ setting::WINDOW_WIDTH, setting::WINDOW_HEIGHT }, "Pqwe")
+	:main_window({ setting::WINDOW_WIDTH, setting::WINDOW_HEIGHT }, "Pl")
 {
 
 
@@ -54,18 +59,9 @@ void Game::draw(const sf::Shape& shape)
 
 void Game::tick(float dt)
 {
-	
-	if (player.collision(player.palyerCord, level.mapCord) == true) 
-	{
-		player.tick();
-	}
-	else
-	{
-		
-	}
-	
-	
-	
+
+	collisionM.collisionPaW(player, level);
+	player.tick(dt);
 
 }
 

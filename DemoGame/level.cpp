@@ -15,17 +15,17 @@ void Level::render()
 {
     sf::RectangleShape block;
 
-    block.setSize(sf::Vector2f(setting::BLOCK_HEIGHT, setting::BLOCK_WIDTH));
+    block.setSize(sf::Vector2f(setting::BLOCK_WIDTH, setting::BLOCK_HEIGHT));
     block.setFillColor(setting::BLOCK_COLOR);
 
     for (int i = 0; i < levelMap.size(); ++i)
     {
-        for (int j = 0; j < levelMap[i].size(); ++j)
+        for (int j = 0; j < levelMap[j].size(); ++j)
         {
             if (levelMap[i][j] == '1')
             {
 
-               block.setPosition(sf::Vector2f(0 + j * setting::BLOCK_HEIGHT, 0 + i * setting::BLOCK_WIDTH));
+               block.setPosition(sf::Vector2f(0 + i * setting::BLOCK_WIDTH, 0 + j * setting::BLOCK_HEIGHT));
 
                mapCord.push_back(block.getGlobalBounds());
 

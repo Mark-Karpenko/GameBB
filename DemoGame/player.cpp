@@ -9,36 +9,40 @@
 
 Player::Player()
 	:posX(setting::WINDOW_WIDTH / 2), posY(setting::WINDOW_HEIGHT / 2)
+	,speed(setting::PLAYER_SPEED)
 {
 	
 }
 
-void Player::fall()
-{
-	posY += setting::GRAVITY;
-}
 
-void Player::tick()
+void Player::tick(float dt)
 {
 
-	posY += setting::GRAVITY;
-
-}
-
-
-bool Player::collision(sf::FloatRect playrCord, std::vector<sf::FloatRect> itemCord)
-{
-	//  Rework
-	for (int i = 0; i < itemCord.size(); i++)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		if (playrCord.intersects(itemCord[i]))
-		{
-			std::cout << "#";
-			return false;
-			break;
-		}
+
+		posX -= speed*dt;
 
 	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+
+		posX += speed*dt;
+
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+
+		posY -= speed * dt;
+
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		
+		posY += speed * dt;
+
+	}
+
 }
 
 void Player::render()

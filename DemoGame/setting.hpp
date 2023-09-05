@@ -10,16 +10,12 @@ namespace setting
 	const sf::Color WINDOW_BACKGROUND(sf::Color::Black);
 
 	//Block
-	constexpr int BLOCK_HEIGHT = 40;
-	constexpr int BLOCK_WIDTH = 30;
+	constexpr int BLOCK_HEIGHT = 30;
+	constexpr int BLOCK_WIDTH = 40;
 	const sf::Color BLOCK_COLOR(sf::Color::Green);
-
-	//World
-	constexpr int GRAVITY = 3;
-	constexpr int GRAVITY_ON_GROUND = 3;
 	
 	//Player
-	constexpr int SPEED = 100;
-	constexpr int JUMP_FORCE=100;
+	constexpr int PLAYER_SPEED = 80;
+
 
 }
