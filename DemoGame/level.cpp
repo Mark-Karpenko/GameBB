@@ -27,7 +27,7 @@ void Level::render()
 
                block.setPosition(sf::Vector2f(0 + i * setting::BLOCK_WIDTH, 0 + j * setting::BLOCK_HEIGHT));
 
-               mapCord.push_back(block.getGlobalBounds());
+               arrCord.push_back(block.getGlobalBounds());
 
                Game::getInstance().draw(block);
             }

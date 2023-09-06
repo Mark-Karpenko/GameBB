@@ -5,27 +5,20 @@
 #include "player.hpp"
 #include "setting.hpp"
 #include "iostream"
+#include "collided.hpp"
 
 CollisionManager::CollisionManager()
 {
 
 }
 
-void CollisionManager::collisionPaW(Player player, Level level)
+void CollisionManager::collisionPaW(Collided firstE, Collided secondE)
 {
-	for (int i = player.palyerCord.top / setting::BLOCK_HEIGHT; i < (player.palyerCord.top + player.palyerCord.height) / setting::BLOCK_HEIGHT; i++)
+	for (int i = 0; i < secondE.arrCord.size(); i++)
 	{
-		for (int j = player.palyerCord.left / setting::BLOCK_WIDTH; j < (player.palyerCord.left + player.palyerCord.width) / setting::BLOCK_WIDTH; j++)
+		if (firstE.singleCord.intersects(secondE.arrCord[i]))
 		{
-
-			if (level.levelMap[i][j] == '1')
-			{
-				std::cout << "1" << " " << player.palyerCord.top + player.palyerCord.height;
-
-				//Need realize
-
-			}
-
+			std::cout << "1";
 		}
 	}
 }

@@ -1,13 +1,12 @@
 #pragma once 
 
 #include <SFML/Graphics.hpp>
+#include "collided.hpp"
 
-class Level
+class Level: public Collided
 {
 
 public:
-
-	std::vector<sf::FloatRect> mapCord;
 
 	Level();
 	void render();

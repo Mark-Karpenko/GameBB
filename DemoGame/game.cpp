@@ -9,7 +9,7 @@
 
 
 Game::Game()
-	:main_window({ setting::WINDOW_WIDTH, setting::WINDOW_HEIGHT }, "Pl")
+	:main_window({ setting::WINDOW_WIDTH, setting::WINDOW_HEIGHT }, "Platformer")
 {
 
 

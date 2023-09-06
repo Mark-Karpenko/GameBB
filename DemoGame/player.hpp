@@ -1,14 +1,13 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "collided.hpp"
 
-class Player
+class Player :public Collided
 {
 public:
 
 	Player();
-
-	sf::FloatRect palyerCord;
 
 	void render();
 

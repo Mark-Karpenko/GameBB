@@ -13,7 +13,7 @@ public:
 
 	CollisionManager();
 
-	void collisionPaW(Player player, Level level);
+	void collisionPaW(Collided firstE, Collided secondE);
 
 };
 

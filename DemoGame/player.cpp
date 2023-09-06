@@ -18,7 +18,39 @@ Player::Player()
 void Player::tick(float dt)
 {
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+
+
+
+	//Control
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+
+		posY -= speed * dt;
+		posX += speed * dt;
+
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+
+		posY -= speed * dt;
+		posX -= speed * dt;
+
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+
+		posY += speed * dt;
+		posX += speed * dt;
+
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+
+		posY += speed * dt;
+		posX -= speed * dt;
+
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 
 		posX -= speed*dt;
@@ -43,6 +75,7 @@ void Player::tick(float dt)
 
 	}
 
+
 }
 
 void Player::render()
@@ -54,7 +87,7 @@ void Player::render()
 
 	mainPlayer.setPosition(sf::Vector2f(posX, posY));
 
-	palyerCord = mainPlayer.getGlobalBounds();
+	singleCord = mainPlayer.getGlobalBounds();
 
 	Game::getInstance().draw(mainPlayer);
 
