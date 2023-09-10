@@ -32,9 +32,8 @@ private:
 
 	// Initialization class
 private:
-	sf::RenderWindow main_window;
-
 	Level level;
+	sf::RenderWindow main_window;
 	Player player;
 	CollisionManager collisionM;
 };

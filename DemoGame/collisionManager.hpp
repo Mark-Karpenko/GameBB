@@ -13,7 +13,7 @@ public:
 
 	CollisionManager();
 
-	void collisionPaW(Collided firstE, Collided secondE);
+	void collisionPaW(Collided &firstE, Collided &secondE);
 
 };
 

@@ -61,13 +61,14 @@ void Game::tick(float dt)
 {
 
 	collisionM.collisionPaW(player, level);
+
 	player.tick(dt);
 
 }
 
 void Game::render()
 {
-
+	level.ReadMap("level.txt");
 	level.render();
 	player.render();
 

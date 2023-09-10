@@ -2,12 +2,12 @@
   collisionManager.cpp
   game.cpp
   level.cpp
-C:\Users\Admin\Desktop\GameBB\DemoGame\level.cpp(28,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Admin\Desktop\GameBB\DemoGame\level.cpp(54,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Admin\Desktop\GameBB\DemoGame\level.cpp(28,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Admin\Desktop\GameBB\DemoGame\level.cpp(54,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
@@ -17,6 +17,6 @@ C:\Users\Admin\Desktop\GameBB\DemoGame\level.cpp(28,49): warning C4244: 'argumen
   setting.hpp
   Generating code
   Previous IPDB not found, fall back to full compilation.
-  All 239 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 358 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   DemoGame.vcxproj -> C:\Users\Admin\Desktop\GameBB\DemoGame\x64\Release\DemoGame.exe

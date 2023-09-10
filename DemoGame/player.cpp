@@ -8,8 +8,6 @@
 #include "iostream"
 
 Player::Player()
-	:posX(setting::WINDOW_WIDTH / 2), posY(setting::WINDOW_HEIGHT / 2)
-	,speed(setting::PLAYER_SPEED)
 {
 	
 }
@@ -22,60 +20,36 @@ void Player::tick(float dt)
 
 
 	//Control
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+
+	//Left
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		posX -= speed * dt;
+	}
+
+	//Right
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 
-		posY -= speed * dt;
 		posX += speed * dt;
 
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
 
-		posY -= speed * dt;
-		posX -= speed * dt;
-
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-	{
-
-		posY += speed * dt;
-		posX += speed * dt;
-
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
-
-		posY += speed * dt;
-		posX -= speed * dt;
-
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
-
-		posX -= speed*dt;
-
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-	{
-
-		posX += speed*dt;
-
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	//Up
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 
 		posY -= speed * dt;
 
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+
+	//Down
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
-		
+
 		posY += speed * dt;
 
 	}
-
-
 }
 
 void Player::render()

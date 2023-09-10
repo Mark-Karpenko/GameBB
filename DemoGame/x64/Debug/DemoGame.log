@@ -1,13 +1,19 @@
-﻿  collisionManager.cpp
-C:\Users\Admin\Desktop\GameBB\DemoGame\collisionManager.cpp(16,13): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+﻿  collided.cpp
+  collisionManager.cpp
+  game.cpp
+  level.cpp
+C:\Users\Admin\Desktop\GameBB\DemoGame\level.cpp(28,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Admin\Desktop\GameBB\DemoGame\collisionManager.cpp(18,14): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\Admin\Desktop\GameBB\DemoGame\level.cpp(28,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(1127,5): error MSB6006: "link.exe" exited with code 1168.
-LINK : fatal error LNK1168: cannot open C:\Users\Admin\Desktop\GameBB\DemoGame\x64\Debug\DemoGame.exe for writing
+  main.cpp
+  player.cpp
+  setting.hpp
+  Generating Code...
+  DemoGame.vcxproj -> C:\Users\Admin\Desktop\GameBB\DemoGame\x64\Debug\DemoGame.exe

@@ -14,14 +14,8 @@ public:
 	void tick(float dt);
 	void gravity(float dt);
 
-	int speed;
 	bool onGround = false;
 
-
-private:
-
-	float posX;
-	float posY;
 
 };
 
