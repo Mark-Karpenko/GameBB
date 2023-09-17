@@ -65,23 +65,23 @@ void Player::Collision(Level level)
             // Right
             if (deltaPos.x < 0)
             {
-                newPos.x = level.arrCord[i].left + level.arrCord[i].width;
+                newPos.x = previousPos.x;
             }
             // Left
             else if (deltaPos.x > 0)
             {
-                newPos.x = level.arrCord[i].left - singleCord.width;;
+                newPos.x = previousPos.x;
             }
 
             // Up
             if (deltaPos.y < 0)
             {
-                newPos.y = level.arrCord[i].top + level.arrCord[i].height;
+                newPos.y = previousPos.y;
             }
             // Down
             else if (deltaPos.y > 0)
             {
-                newPos.y = level.arrCord[i].top - singleCord.height;
+                newPos.y = previousPos.y;
             }
         }
     }
