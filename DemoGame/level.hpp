@@ -2,11 +2,11 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "collided.hpp"
+
 #include "fstream"
 #include "vector"
 
-class Level: public Collided
+class Level
 {
 
 public:
@@ -20,4 +20,7 @@ private:
 
 	std::vector<std::vector<char>> levelMap;
 
+public:
+
+	std::vector < sf::FloatRect > arrCord;
 };

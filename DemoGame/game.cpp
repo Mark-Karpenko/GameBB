@@ -1,7 +1,6 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "collisionManager.hpp"
 #include "level.hpp"
 #include "player.hpp"
 #include "setting.hpp"
@@ -60,8 +59,7 @@ void Game::draw(const sf::Shape& shape)
 void Game::tick(float dt)
 {
 
-	collisionM.collisionPaW(player, level);
-
+	player.Collision(level);
 	player.tick(dt);
 
 }

@@ -133,8 +133,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="collided.cpp" />
-    <ClCompile Include="collisionManager.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="level.cpp" />
     <ClCompile Include="main.cpp" />
@@ -142,8 +140,6 @@
     <ClCompile Include="setting.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="collided.hpp" />
-    <ClInclude Include="collisionManager.hpp" />
     <ClInclude Include="game.hpp" />
     <ClInclude Include="level.hpp" />
     <ClInclude Include="player.hpp" />

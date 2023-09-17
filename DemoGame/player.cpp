@@ -1,4 +1,4 @@
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
 
 #include "game.hpp"
 #include "Player.hpp"
@@ -8,6 +8,7 @@
 #include "iostream"
 
 Player::Player()
+	:posX(setting::WINDOW_WIDTH/2),posY(setting::WINDOW_HEIGHT/2)
 {
 	
 }
@@ -16,22 +17,20 @@ Player::Player()
 void Player::tick(float dt)
 {
 
-
-
+    previousPos = sf::Vector2f(posX, posY);
 
 	//Control
-
 	//Left
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		posX -= speed * dt;
+		posX -= setting::PLAYER_SPEED * dt;
 	}
 
 	//Right
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 
-		posX += speed * dt;
+		posX += setting::PLAYER_SPEED * dt;
 
 	}
 
@@ -39,7 +38,7 @@ void Player::tick(float dt)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 
-		posY -= speed * dt;
+		posY -= setting::PLAYER_SPEED * dt;
 
 	}
 
@@ -47,9 +46,52 @@ void Player::tick(float dt)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 
-		posY += speed * dt;
+		posY += setting::PLAYER_SPEED * dt;
 
 	}
+}
+
+void Player::Collision(Level level)
+{
+    newPos = sf::Vector2f(posX, posY);
+
+    for (int i = 0; i < level.arrCord.size(); i++)
+    {
+        if (singleCord.intersects(level.arrCord[i]))
+        {
+            
+            deltaPos = newPos - previousPos;
+
+            // Right
+            if (deltaPos.x < 0)
+            {
+                newPos.x = level.arrCord[i].left + level.arrCord[i].width;
+            }
+            // Left
+            else if (deltaPos.x > 0)
+            {
+                newPos.x = level.arrCord[i].left - singleCord.width;;
+            }
+
+            // Up
+            if (deltaPos.y < 0)
+            {
+                newPos.y = level.arrCord[i].top + level.arrCord[i].height;
+            }
+            // Down
+            else if (deltaPos.y > 0)
+            {
+                newPos.y = level.arrCord[i].top - singleCord.height;
+            }
+        }
+    }
+
+    // Обновите позицию игрока
+    posX = newPos.x;
+    posY = newPos.y;
+
+    // Обновите предыдущую позицию
+    previousPos = sf::Vector2f(posX, posY);
 }
 
 void Player::render()

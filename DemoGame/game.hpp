@@ -1,7 +1,6 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "collisionManager.hpp"
 #include "level.hpp"
 #include "player.hpp"
 
@@ -35,5 +34,4 @@ private:
 	Level level;
 	sf::RenderWindow main_window;
 	Player player;
-	CollisionManager collisionM;
 };
